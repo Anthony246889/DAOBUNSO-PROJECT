@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Daobunso</title>
+
+    <style type="text/css">
+        .main{
+            width: 90%;
+            height: 40vh;
+            margin: auto;
+        }
+        .main .container{
+            background-image: url(./image/service_intro\ picture/log-cabin-1886620_1920.jpg);
+            background-size:cover;
+        }
+        .main .text{
+            text-align:center;
+            color: aliceblue;
+            background-color: cadetblue;
+            background: hsla(178,70%,60%,0.4);
+            margin-top: -13%;
+            margin-left: -10vh;
+        }
+        .nav_title{
+            margin-top: 0.5rem;
+            background-color: #2D3E4D;
+            width: 100vw;
+            height: 3rem;
+            font-size: 1.5rem;
+            color: #FFF;
+            text-align: center;
+            line-height: 3rem;
+        }
+
+
+        .ratings {
+            position: relative;
+            vertical-align: middle;
+            display: inline-block;
+            color: #b1b1b1;
+            overflow: hidden;
+        }
+        .full-stars {
+            position: absolute;
+            left: 0;
+            top: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #fde16d;
+        }
+        .empty-stars:before, .full-stars:before {
+            content:"\2605\2605\2605\2605\2605";
+            font-size: 14pt;
+        }
+        .empty-stars:before {
+            -webkit-text-stroke: 2px #848484;
+        }
+        .full-stars:before {
+            -webkit-text-stroke: 2px orange;
+        }
+        /* Webkit-text-stroke is not supported on firefox or IE */
+
+        /* Firefox */
+        @-moz-document url-prefix(){
+            .full-stars {
+                color: #ECBE24;
+            }
+        }
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+        <div class="container w-100 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-10">
+                    <div class="text w-50">
+                        <h1>Feedback</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav_title">網站回饋 User Feedback</div>
+    <div class="feedback">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="btn-group mx-auto col-4" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1">Star 1</label>
+                  
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Star 2</label>
+                  
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Star 3</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio4">Star 4</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio5">Star 5</label>
+                </div> -->
+                <div class="ratings">
+                    <div class="empty-stars"></div>
+                    <div class="full-stars" style="width:70%"></div>
+                </div>
+
+                    
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">主旨</label>
+                        <input type="" class="form-control" id="exampleFormControlInput1">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">內容</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary me-md-2" type="button">送出</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+  </body>
+</html>
