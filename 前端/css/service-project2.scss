@@ -39,13 +39,6 @@
     top: 0.5rem;
   }
   
-  
-  /* <!-- 登入 --> */
-  
-  /* <!-- 登入 --> */
-  
-  /* <!-- 目錄 --> */
-  
   .container-fluid{
     position: relative;
     right: 50px;
@@ -86,7 +79,8 @@
   a.nav-link:hover {
     color: #3EB595;
   }
-#nav_title{
+
+  #nav_title{
     margin-top: 0.5rem;
     background-color: #2D3E4D;
     width: 100vw;
@@ -96,119 +90,74 @@
     text-align: center;
     line-height: 3rem;
 }
-#sec_area_1{
-    position: relative;
-    overflow: hidden;
+
+
+// 大框
+.card{
+    height: 1200px;
 }
-#main_pic{
-    width: 100vw;
-    height: 60vh;
-    transition: all 1s ease;
+// 大框
+// 圖片內
+.box1{
+    position:relative;
+    width: 700px;
+    height: 10px;
 }
-#main_pic:hover{
-    transform: scale(1.1);
-}
-#sec_area_1 .p1{
-    position: absolute;
-    top: 5rem;
-    left: 25rem;
-    font-size: 3rem;
-    z-index: 2;
-    font-weight: 900;
-    color: #FFF;
-}
-#sec_area_1 .p2{
-    position: absolute;
-    top: 8rem;
-    left: 55rem;
-    font-size: 3rem;
-    z-index: 2;
-    font-weight: 900;
-    color: #FFF;
-}
-#sec_area_2{
-    position: relative;
-    margin: 1.5rem;
-    left: 7rem;
-}
-#sec_area_2 .p1{
-    top: 5rem;
-    left: 25rem;
-    font-size: 2rem;
-    font-weight: 700;
-}
-#sec_area_3{
-    margin: 2rem auto;
-}
-#sec_area3_top ,#sec_area3_bot{
-    display: flex;
-    margin: 2rem 2rem;
-    width: 80vw;
-    justify-content: space-between;
-}
-.area3_p1{
-    color: #3EB595;
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-.area3_p2{
-    font-weight: 300;
-    font-size: 0.9rem;
-}
-#sec_area_4{
-    display: flex;
-    margin: 3rem auto;
-    width: 100vw;
-    justify-content: space-between;
-}
-.area4_p{
-    font-weight: 500;
-    font-size: 1.1rem;
-}
-#area_pic{
-    width: 100vw;
-    height: 60vh;
-}
-#sec_area_4 .area4_p1{
-    position: absolute;
-    top: 3rem;
-    left: 5rem;
-    font-size: 3rem;
-    z-index: 2;
-    font-weight: 900;
-    color: #FFF;
-    background-color: rgba(0, 0, 0, 0.25);
+.d-block{
+    height: 1200px;
+    width: 700px;
 }
 
-#sec_area_6{
-    background-color: rgba(45,62,77,0.8);
-    display: flex;
-    justify-content: center;
+
+.carousel-caption{
+    background-color: #2D3E4D;
+    opacity: 0.75;
 }
-#sec_area_6 .area_6{
-    /* border: 1px solid red; */
-    margin: 5rem 0;
-    width: 40rem;
-    height: 100%;
+.text1{
+    color: white;
+    
 }
-#sec_area_6 .area_6 p{
-    padding-left: 1.5rem;
-    line-height: 1.5rem;
+// 圖片內
+
+// 旁邊文字
+#mydate{
+  width: 575px;
+}
+#enddate{
+  width: 575px;
+}
+.card-body{
+    position: relative;
+    left: 300px;
+}
+.list-group{
+    width: 500px;
+    left: 500px;
+}
+.col-md-8{
+position: relative;
+left: 500px;
+}
+// 旁邊文字
+
+
+
+
+// 旁邊選單
+
+
+#mydata{
+    width: 400px;
+}
+#myMoney{
+    width: 575px;
+   
 }
 
-#sec_area_6 .area6_p1{
-    text-align: center;
-    padding-bottom: 1rem;
-    font-size: 1.2rem;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-}
-#sec_area_6 .area6_p2{
-    padding-bottom: 0.5rem;
-    color:rgb(255, 255, 255);
-    font-size: 0.8rem;
-    font-weight: 300;
-}
+
+// 旁邊選單
+
+
 
 #sec_area_8{
     text-align: center;
