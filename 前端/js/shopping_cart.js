@@ -2,11 +2,16 @@ storage = localStorage;
 $(function(){
     tbody = $('tbody');
     jsonData = JSON.parse(storage.getItem('cart'));
+    
     // console.log(jsonData.length);
     total = 0;
     for(let i = 0; i < jsonData.length; i++){
         createCartList(i);
-        let itemPrice = parseInt(jsonData[i].price);
+        if(jsonData[i].type == "service"){
+            itemPrice = parseInt(jsonData[i].price);
+        } else {
+            itemPrice = parseInt(jsonData[i].price) * parseInt(jsonData[i].amount);
+        } 
         total += itemPrice;
     }
     $('#total').text(total);
@@ -18,7 +23,6 @@ function createCartList(i){
     let imgTd = document.createElement('td');
     let image = document.createElement('img');
     image.src = jsonData[i].image;
-    image.style.width = 100;
     imgTd.appendChild(image);
     itemTr.appendChild(imgTd);
 
@@ -42,17 +46,25 @@ function createCartList(i){
     itemTr.appendChild(timeTd); 
 
     let numTd = document.createElement('td');
-    let numInput = document.createElement('input');
-    numInput.type = 'number';
-    numInput.value = 1;
-    numInput.min = 1;
-    numInput.addEventListener('input',changItemCount);
-    numTd.appendChild(numInput);
+    if(jsonData[i].type == "service"){
+        numTd.innerText = 1;
+    } else {
+        let numInput = document.createElement('input');
+        numInput.type = 'number';
+        numInput.value = jsonData[i].amount;
+        numInput.min = 1;
+        numInput.addEventListener('input',changItemCount);
+        numTd.appendChild(numInput);
+    }
     itemTr.appendChild(numTd); 
 
     let priceTd = document.createElement('td');
     let priceSpan = document.createElement('span');
-    priceSpan.innerText = jsonData[i].price;
+    if(jsonData[i].type == "service"){
+        priceSpan.innerText = jsonData[i].price;
+    } else {
+        priceSpan.innerText = jsonData[i].price * jsonData[i].amount;
+    }
     priceTd.appendChild(priceSpan);
     itemTr.appendChild(priceTd);
 
@@ -70,8 +82,12 @@ function changItemCount() {
     let newNum = $(this).val();
     // console.log(newNum);
     let index = this.parentNode.previousSibling.previousSibling.previousSibling.firstChild.id;
+    // let index = $(this).parent().prev().prev().prev().first().attr('id');
+    // console.log(index);
     let itemPrice = parseInt(jsonData[index].price);
     // console.log(itemPrice);
+    jsonData[index].amount = newNum;
+    // console.log(jsonData[index].amount);
 
     let subtotal = newNum * itemPrice;
     // console.log(subtotal);

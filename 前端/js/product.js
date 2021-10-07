@@ -56,15 +56,18 @@ $('.product-dropdown .dropdown-item4').click(()=>{
 }
 // amount
 
-
+ let cart = [];
 //cart-add
 sent.click( () => {
-    let cart = [];
+   
     cart.push({
+        type: "product",
         image   :   imgsrc,
         item    :   product_name,
         price   :   product_price,
         amount  :   product_amount,
+        timeframe : "",
+        date:"",
     });
     console.log(JSON.stringify(cart));
     localStorage.setItem('cart',JSON.stringify(cart));
