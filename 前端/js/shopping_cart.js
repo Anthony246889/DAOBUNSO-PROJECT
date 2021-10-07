@@ -1,6 +1,6 @@
 storage = localStorage;
-function doFirst(){
-    tbody = document.getElementsByTagName('tbody')[0];
+$(function(){
+    tbody = $('tbody');
     jsonData = JSON.parse(storage.getItem('cart'));
     // console.log(jsonData.length);
     total = 0;
@@ -9,11 +9,11 @@ function doFirst(){
         let itemPrice = parseInt(jsonData[i].price);
         total += itemPrice;
     }
-    document.getElementById('total').innerText = total;
-}
+    $('#total').text(total);
+})
 function createCartList(i){
     let itemTr = document.createElement('tr');
-    tbody.appendChild(itemTr);
+    tbody.append(itemTr);
 
     let imgTd = document.createElement('td');
     let image = document.createElement('img');
@@ -65,33 +65,31 @@ function createCartList(i){
     itemTr.appendChild(delTd);
 }
 function changItemCount() {
-    let itemOldPrice = this.parentNode.nextSibling.firstChild.innerText;
+    let itemOldPrice = $(this).parent().next().first().text();
     // console.log(itemOldPrice);
-    let newNum = this.value;
+    let newNum = $(this).val();
     // console.log(newNum);
     let index = this.parentNode.previousSibling.previousSibling.previousSibling.firstChild.id;
     let itemPrice = parseInt(jsonData[index].price);
     // console.log(itemPrice);
 
-    let subtotal = this.value * itemPrice;
+    let subtotal = newNum * itemPrice;
     // console.log(subtotal);
-    this.parentNode.nextSibling.firstChild.innerText = subtotal;
+    $(this).parent().next().first().text(subtotal);
     total = total - itemOldPrice + subtotal;
     // console.log(total);
-    document.getElementById('total').innerText = total;
+    $('#total').text(total);
 }
 function deleteItem(){
     let index = this.parentNode.previousSibling.previousSibling.previousSibling.previousSibling.previousSibling.firstChild.id;
     // console.log(index);
-    let delCount =  this.parentNode.previousSibling.firstChild.innerText;
+    let delCount =  $(this).parent().prev().first().text();
     // console.log(delCount);
     total -= delCount;
-    document.getElementById('total').innerText = total;
+    $('#total').text(total);
     jsonData.splice(index, 1);
     // console.log(jsonData);
     storage.setItem('cart', JSON.stringify(jsonData));
-    tbody.removeChild(this.parentNode.parentNode);
-    location.reload();
-  
+    tbody.remove($(this).parent().parent());
+    location.reload(); 
 }
-window.addEventListener('load',doFirst);
