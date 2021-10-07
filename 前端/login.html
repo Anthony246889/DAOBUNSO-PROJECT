@@ -64,14 +64,6 @@
           </nav>
     </header>
 
-
-
-
-
-
-
-
-
     <nav>
         <div id="nav_title">登入.註冊  Login.Register</div>
     </nav>
@@ -82,11 +74,11 @@
                         <form action="" method="POST" id="form_in">
                             <div class="mb-3 mx-auto">
                               <label class="form-label" for="account">帳號</label>
-                              <input class="form-control w-80 p-2" id="account" name="account" type="text" required>
+                              <input class="form-control w-80 p-2" id="account" name="account" type="text" required pattern="^([a-zA-Z]+\d+|\d+[a-zA-Z]+)[a-zA-Z0-9]*$">
                             </div>
                             <div class="mb-3">
                               <label class="form-label" for="pswd">密碼</label>
-                              <input class="form-control w-80 p-2" type="password" id="pswd" name="pswd" required>
+                              <input class="form-control w-80 p-2" type="password" id="pswd" name="pswd" minlength="8" required>
                             </div>
                             <div class="mb-3 form-check">
                               <input class="form-check-input" id="rememberMe" name="rememberMe" type="checkbox">
@@ -107,11 +99,11 @@
                             </div>
                             <div class="mb-3 mx-auto">
                                 <label class="form-label" for="accountNew">帳號</label>
-                                <input class="form-control w-80 p-2" id="accountNew" type="text" name="accountNew" placeholder="請輸入帳號" required>
+                                <input class="form-control w-80 p-2" id="accountNew" type="text" name="accountNew" placeholder="請輸入帳號(英文和數字)" minlength="3" required pattern="^([a-zA-Z]+\d+|\d+[a-zA-Z]+)[a-zA-Z0-9]*$">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="pswdNew">密碼</label>
-                                <input class="form-control w-80 p-2" type="password" id="pswdNew" name="pswdNew" placeholder="請輸入密碼" required>
+                                <input class="form-control w-80 p-2" type="password" id="pswdNew" name="pswdNew" placeholder="請輸入密碼" minlength="8" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="repswd">密碼確認</label>
@@ -172,6 +164,14 @@
                 $("#form_in").hide();
                 $("#form_reg").show();
             })
+            $('#form_reg').submit(function () { 
+              if($('#pswdNew').val() != $('#repswd').val()){
+                alert('兩次輸入的密碼不相符，請重新輸入！');
+                return false;
+              } else {
+                return true;
+              }
+            });
     </script>
 </body>
 </html>
