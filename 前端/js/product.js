@@ -55,8 +55,12 @@ $('.product-dropdown .dropdown-item4').click(()=>{
 });
 }
 // amount
-
+ let cartJson = localStorage.getItem('cart');
  let cart = [];
+
+ if (cartJson) {
+    cart = JSON.parse(cartJson);
+}
 //cart-add
 sent.click( () => {
    
