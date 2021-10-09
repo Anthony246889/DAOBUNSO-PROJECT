@@ -12,8 +12,9 @@ $('.user-img img').attr('src',uimgsrc);
 $('.star img').attr('src',starimg);
 $('.user-name h2').text(uname);
 
-$('.btn-ex').click(()=>{
-    $('.btn-ex').toggleClass('tog');
+$('.btn-ex').click(function(){
+
+    $(this).toggleClass('tog');
     if($('.btn-ex').hasClass('tog')){
         $('.feedback').show();
         $('.btn-ex').text("收起");
@@ -22,6 +23,7 @@ $('.btn-ex').click(()=>{
         $('.btn-ex').text("填寫意見");
     }
 });
+
 $('.btn-feedback').click(()=>{
     ucontent = $('.form-control').val();
     let feedback = [];
