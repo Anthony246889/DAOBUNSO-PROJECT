@@ -1,41 +1,19 @@
-/* <div class = "peko">123</div>
-$('.peko').text()
-    =   123
-
-<div name = "peko" class ="neol">321</name>
-$('#peko') == $('.neol');
-$('.neol').text()
-    =   321
-<div>111<h1>222</h1></div>
-$('div').text()
-    =   111
-$('div h1').text()
-    =   222 */
-
-    
-/* <div class = "peko">
-    <img src="../peko/hahaha/pekopeko.png" alt="meowmeow">
-</div>
-$('.peko img').attr('src')
-    =   "../peko/hahaha/pekopeko.png"
-
-$('.peko img').attr('src','../neol/noooooooo/neolneol.jpg')
-=>
-<div class = "peko">
-    <img src="../neol/noooooooo/neolneol.jpg" alt="meowmeow">
-</div>
-} */
-
+// 接收shopping頁面的sessionStorage
 let spcatch = JSON.parse(sessionStorage.getItem('splink'))[0];
+let imgsrc  = spcatch.p_imgsrc;
+let product_name    = spcatch.p_name;
+let product_price   = spcatch.p_price;
 
-$('.product-img img').attr('src',spcatch.p_imgsrc);
-$('.product-name h3').html(spcatch.p_name);
+
+$('.product-img img').attr('src',imgsrc);
+$('.product-name h3').html(product_name);
 $('.product-content').html(spcatch.p_content);
-$('.product-price').html(spcatch.p_price);
+$('.product-price').html(product_price);
 
 
 const cart_add = $('.cart-add');
-let product_amount = $('.product-dropdown button').html();
+
+let product_amount  = $('.product-dropdown button').html();
 
 // amount
 {

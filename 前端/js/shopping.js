@@ -10,9 +10,7 @@ let p3content ="neolneol!";
 let p1price =20;
 let p2price =50;
 let p3price =100;
-let p1link = "product_1.html";
-let p2link = "product_2.html";
-let p3link = "product_3.html";
+let plink = "product.html";
 const p1btn = $('.product1 a');
 const p2btn = $('.product2 a');
 const p3btn = $('.product3 a');
@@ -29,9 +27,8 @@ $('.product3 .card-content').text(p3content);
 $('.product1 .price').text(p1price+"元");
 $('.product2 .price').text(p2price+"元");
 $('.product3 .price').text(p3price+"元");
-$('.product1 a').attr('href',p1link);
-$('.product2 a').attr('href',p2link);
-$('.product3 a').attr('href',p3link);
+$('.spl').attr('href',plink);
+
 
 p1btn.click(()=>{
     let splink=[];
