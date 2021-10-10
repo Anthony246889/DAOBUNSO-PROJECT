@@ -1,5 +1,6 @@
 const starimg = "./image/service_intro picture/holo/noel.png";
 
+let oid ="";
 let uimgsrc = "./image/service_intro picture/holo/pekora.png";
 let uname = "pekora";
 let uid ="";
@@ -29,11 +30,12 @@ $('.btn-feedback').click(()=>{
     let feedback = [];
     
     feedback.push({
-        type    :   "feedback",
-        userid  :   uid,
-        star    :   getstar,
-        date    :   wdate,
-        content :   ucontent,
+        type        :   "feedback",
+        objectid    :   oid,
+        userid      :   uid,
+        star        :   getstar,
+        date        :   wdate,
+        content     :   ucontent,
     });
 
     console.log(JSON.stringify(feedback));

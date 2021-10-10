@@ -12,7 +12,7 @@ $('div').text()
 $('div h1').text()
     =   222 */
 
-
+    
 /* <div class = "peko">
     <img src="../peko/hahaha/pekopeko.png" alt="meowmeow">
 </div>
@@ -26,11 +26,15 @@ $('.peko img').attr('src','../neol/noooooooo/neolneol.jpg')
 </div>
 } */
 
+let spcatch = JSON.parse(sessionStorage.getItem('splink'))[0];
 
-const imgsrc = $('.product-img img').attr('src');
-const product_name = $('.product-name h3').html();
-const product_price = $('.product-price').html();
-const sent = $('.cart-add');
+$('.product-img img').attr('src',spcatch.p_imgsrc);
+$('.product-name h3').html(spcatch.p_name);
+$('.product-content').html(spcatch.p_content);
+$('.product-price').html(spcatch.p_price);
+
+
+const cart_add = $('.cart-add');
 let product_amount = $('.product-dropdown button').html();
 
 // amount
@@ -62,10 +66,10 @@ $('.product-dropdown .dropdown-item4').click(()=>{
     cart = JSON.parse(cartJson);
 }
 //cart-add
-sent.click( () => {
+cart_add.click( () => {
    
     cart.push({
-        type: "product",
+        type    :   "product",
         image   :   imgsrc,
         item    :   product_name,
         price   :   product_price,
@@ -73,8 +77,8 @@ sent.click( () => {
         timeframe : "",
         date:"",
     });
-    console.log(JSON.stringify(cart));
     localStorage.setItem('cart',JSON.stringify(cart));
     alert("送出購物車\n內容為:\n"+ localStorage.getItem('cart'));
 });
 //cart-add
+
